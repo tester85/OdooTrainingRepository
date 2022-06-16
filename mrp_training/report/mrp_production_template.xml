@@ -1,12 +1,12 @@
 <?xml version="1.0"?>
 <odoo>
+<!--    @ToDo keep working on it - just for testing purpose -->
     <template id="internal_layout_inherit" inherit_id="web.internal_layout">
         <xpath expr="//div[@class='col-3']" position="replace">
             <div class="align-items-start">
             </div>
         </xpath>
-        <!--        Eliminando otros valores de fecha Nombre-->
-        <!--        Nombre-->
+
         <xpath expr="//div[@class='col-2 offset-3 text-right']" position="replace">
             <span t-esc="company.name"/>
         </xpath>

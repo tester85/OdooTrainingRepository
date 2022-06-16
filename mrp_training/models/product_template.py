@@ -4,8 +4,9 @@ from odoo import models, fields, api
 
 
 class ProductTemplate(models.Model):
-    _name = 'product.template'
-    _inherit = [_name]
+    _inherit = 'product.template'
+    _description = 'Inherit product to add new requested fields'
+
     #
     # def _get_default_elem_type(self):
     #     return self.env.ref('buc_budget_fabrication.fabrication_expense_element_type_1').id or False
@@ -21,7 +22,7 @@ class ProductTemplate(models.Model):
         ('inUse', 'in Use'),
         ('deprecated', 'Deprecated')], string='State', default='inUse', copy=False, tracking=True)
 
-    # When a product goes from ‘In use’ to ‘Deprecate’, set its cost to 0€.
+    # When a product goes from ‘In use’ to ‘Deprecate’, set its cost to 0.
     @api.onchange('state')
     def _onchange_partner(self):
         if self.state == 'deprecated':

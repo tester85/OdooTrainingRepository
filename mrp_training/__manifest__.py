@@ -15,7 +15,6 @@
         'views/menu_views.xml',
         'views/product_template_views.xml',
         'views/mrp_production_views.xml',
-        #'report/mrp_production_template.xml',
         'report/custom_production_order.xml',
         'report/custom_report_mrp_production_view.xml',
     ],

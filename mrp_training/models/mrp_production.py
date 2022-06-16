@@ -4,8 +4,10 @@
 from odoo import api, fields, models, _
 
 
-class MrpProduction(models.Model):
-    _name = 'mrp.production'
-    _inherit = [_name]
+class MrpProductProduction(models.Model):
+    _inherit = 'mrp.production'
+    _description = 'Add new field lot prefix to product form template '
 
+    # Introduce a prefix to the product to conform a new lot number
+    # If not added we're going to use odoo default one.
     lot_prefix = fields.Char(related="product_id.lot_prefix")

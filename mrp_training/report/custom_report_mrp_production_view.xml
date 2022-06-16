@@ -1,16 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
     <data>
+<!--       We've been asked to change the date on the HEADER to a different format  -->
+<!--       and Title of the report to a different one  -->
         <template id="internal_layout_inherit" inherit_id="web.internal_layout">
             <xpath expr="//div[@class='col-3']" position="replace">
                 <span t-esc="context_timestamp(datetime.datetime.now()).strftime('%d-%B-%Y')"/>
                 <br/>
             </xpath>
-            <!--        Eliminando otros valores de fecha Nombre-->
-            <!--        Nombre-->
-<!--            <xpath expr="//div[@class='col-2 offset-3 text-right']" position="replace">-->
-<!--                <span t-esc="company.name"/>-->
-<!--            </xpath>-->
             <xpath expr="//div[@class='col-2 offset-2 text-center']" position="after">
                 <br/>
                 <div class="row text-center">
@@ -20,6 +17,8 @@
         </template>
 
         <!--    Nuevo reporte personalizado -->
+<!--       We've been asked to create a new report keep  -->
+<!--       and Title of the report to a different one  -->
         <template id="report_custom_mrp_order">
             <t t-call="web.html_container">
                 <t t-foreach="docs" t-as="o">
