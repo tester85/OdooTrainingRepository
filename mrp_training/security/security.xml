@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+        <record id="group_mrp_modified_manager" model="res.groups">
+            <field name="name">MyMRP Manager</field>
+            <field name="implied_ids" eval="[(4, ref('mrp.group_mrp_manager')), (4, ref('uom.group_uom'))]"/>
+            <field name="users" eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"/>
+        </record>
+    </data>
+</odoo>

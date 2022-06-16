@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <function model="ir.ui.menu" name="write">
+        <value eval="[ref('mrp.menu_mrp_root')]"/>
+        <value eval="{'name': 'Production',
+                      'groups_id': [(6, 0, [ref('base.group_user')])],
+                      'web_icon': 'buc_budget_fabrication,static/src/img/icon.png'}"/>
+    </function>
+
+<!--    <menuitem id="mrp.menu_mrp_production_action" parent="mrp.menu_mrp_bom" groups="base.group_no_one"/>-->
+<!--    <menuitem id="mrp.menu_mrp_unbuild" active="0"/>-->
+<!--    <menuitem id="mrp.menu_mrp_scrap" active="0"/>-->
+
+<!--    <menuitem id="mrp.menu_procurement_compute_mrp" active="0"/>-->
+<!--    <menuitem id="mrp.menu_mrp_production_report" active="0"/>-->
+
+<!--    <menuitem id="menu_fabrication_bottle" sequence="23" name="Bottle price" parent="mrp.menu_mrp_root"/>-->
+<!--    <menuitem id="menu_fabrication_nomenclatures" sequence="30" name="Nomenclatures" parent="mrp.menu_mrp_root"/>-->
+
+    <function model="ir.ui.menu" name="write">
+        <value eval="[ref('stock.menu_stock_root')]"/>
+        <value eval="{'groups_id': [(6, 0, [ref('base.group_no_one')])]}"/>
+    </function>
+</odoo>
