@@ -12,7 +12,6 @@
     'description': """Module for MRP Training.""",
     'license': 'LGPL-3',
     'data': [
-        'views/menu_views.xml',
         'views/product_template_views.xml',
         'views/mrp_production_views.xml',
         'report/custom_production_order.xml',

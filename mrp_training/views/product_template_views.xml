@@ -6,6 +6,27 @@
         <field name="model">product.template</field>
         <field name="inherit_id" ref="product.product_template_only_form_view"/>
         <field name="arch" type="xml">
+<!--            Declarando los valores funciona pero el statusbar no me muestra correctamente los estados-->
+            <header>
+                <button name="action_set_in_use" string="Set In Use" states="prototype" type="object"
+                        class="oe_highlight"/>
+                <button name="action_set_deprecated" string="Set Deprecated" states="prototype,inUse"
+                        type="object"/>
+                <field name="state" widget="statusbar" statusbar_visible="prototype,inUse,deprecated"
+                       invisible="context.get('is_modal')"/>
+            </header>
+            <!--            Heredando no reconoce los valores-->
+            <!--            <xpath expr="//header" position="inside">-->
+            <!--                <header>-->
+            <!--                    <button name="action_set_in_use" string="Set In Use" states="prototype" type="object"-->
+            <!--                            class="oe_highlight"/>-->
+            <!--                    <button name="action_set_deprecated" string="Set Deprecated" states="prototype,inUse"-->
+            <!--                            type="object"/>-->
+            <!--                    <field name="state" widget="statusbar" statusbar_visible="prototype,inUse,deprecated"-->
+            <!--                           invisible="context.get('is_modal')"/>-->
+            <!--                </header>-->
+            <!--            </xpath>-->
+
             <xpath expr="//field[@name='default_code']" position="after">
                 <label for="lot_prefix"/>
                 <div>
