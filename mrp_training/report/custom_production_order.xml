@@ -2,7 +2,7 @@
 <odoo>
     <data>
 <!--        We've been asked to create a new production report order
-            to add changes keeping the original -->
+            to add changes keeping the original-->
         <record id="action_custom_report_production_order" model="ir.actions.report">
             <field name="name">Custom Production Order</field>
             <field name="model">mrp.production</field>
