@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+    <data>
+        <!-- We've been asked to make a list with all the products and if possible
+                    grouped by state-->
+        <!-- Respective action to generate the report-->
+        <record id="action_report_product_state_list" model="ir.actions.report">
+            <field name="name">Product State List</field>
+            <field name="model">product.template</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">custom_products_report.report_product_state_list</field>
+            <field name="report_file">custom_products_report.report_product_state_list</field>
+            <field name="print_report_name">'Product List'</field>
+            <field name="binding_model_id" ref="model_product_template"/>
+            <field name="binding_type">report</field>
+        </record>
+    </data>
+</odoo>

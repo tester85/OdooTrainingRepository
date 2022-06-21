@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!--    We need to design a wizard to select between reports -->
+    <record id="view_custom_product_report_form" model="ir.ui.view">
+        <field name="name">view.custom.product.report.wizard.form</field>
+        <field name="model">product.report.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Custom Products Reports">
+                <h3>Wizard to generate custom product reports</h3>
+                <group>
+                    <group>
+                        <!--  Selection field for reports-->
+                        <field name="report" widget="radio"/>
+                    </group>
+                    <group>
+                        <!--  Selection field only for specific state-->
+                        <field name="state" attrs="{'invisible': [('report', '!=', 'state')]}"/>
+                    </group>
+                </group>
+                <footer>
+                    <button name="action_print_report" string="Export" type="object" class="btn-primary"/>
+                    <button string="Close" class="btn-default" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+    <!--Related action-->
+    <record id="action_view_custom_product_report" model="ir.actions.act_window">
+        <field name="name">Custom product report</field>
+        <field name="res_model">product.report.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="view_custom_product_report_form"/>
+        <field name="target">new</field>
+    </record>
+    <!--Adding to the bottom of warehouses reports-->
+    <menuitem action="action_view_custom_product_report"
+              id="menu_custom_product_report_list"
+              name="Inform Product List"
+              parent="stock.menu_warehouse_report"
+              sequence="160"/>
+</odoo>

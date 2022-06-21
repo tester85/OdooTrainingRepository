@@ -16,6 +16,8 @@
         'views/mrp_production_views.xml',
         'report/custom_production_order.xml',
         'report/custom_report_mrp_production_view.xml',
+        # 'report/product_template_state_list.xml',
+        # 'report/product_template_state_list_template.xml',
     ],
     'application': True,
 }

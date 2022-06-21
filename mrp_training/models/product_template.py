@@ -19,11 +19,11 @@ class ProductTemplate(models.Model):
     # Set the values: ‘Prototype’, ‘In use’ and ‘Deprecated’. By default, the Kanban view must be grouped by status.
     state = fields.Selection([
         ('prototype', 'Prototype'),
-        ('inUse', 'in Use'),
-        ('deprecated', 'Deprecated')], 'State', default='prototype', copy=False, tracking=True)
+        ('in_use', 'in Use'),
+        ('deprecated', 'Deprecated')], string='State', default='prototype', copy=False, tracking=True)
 
     def action_set_in_use(self):
-        self.write({'state': 'inUse'})
+        self.write({'state': 'in_use'})
 
     def action_set_deprecated(self):
         self.write({'state': 'deprecated'})
