@@ -23,10 +23,10 @@ class ProductTemplate(models.Model):
         ('deprecated', 'Deprecated')], string='State', default='prototype', copy=False, tracking=True)
 
     def action_set_in_use(self):
-        self.write({'state': 'in_use'})
+        return super(ProductTemplate, self).write({'state': 'in_use'})
 
     def action_set_deprecated(self):
-        self.write({'state': 'deprecated'})
+        return super(ProductTemplate, self).write({'state': 'deprecated', 'standard_price': 0.0})
 
     # When a product goes from ‘In use’ to ‘Deprecate’, set its cost to 0.
     @api.onchange('state')
